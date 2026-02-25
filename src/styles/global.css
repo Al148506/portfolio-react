@@ -1,0 +1,26 @@
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #0f172a; /* azul oscuro moderno */
+  color: #f1f5f9;
+}
+
+.section {
+  padding: 100px 0;
+}
+
+.section-title {
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.highlight {
+  color: #38bdf8;
+}
+
+.btn-modern {
+  border-radius: 50px;
+  padding: 10px 25px;
+  font-weight: 500;
+}
+

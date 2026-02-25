@@ -1,0 +1,167 @@
+/* ─── Import ─────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap');
+
+/* ─── Navbar Shell ────────────────────────────────── */
+.custom-navbar {
+  background: rgba(9, 14, 29, 0.75);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 12px 0;
+  font-family: 'DM Sans', sans-serif;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-navbar.scrolled {
+  background: rgba(9, 14, 29, 0.95);
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* ─── Nav Links ───────────────────────────────────── */
+.navbar-nav .nav-link {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: rgba(200, 215, 240, 0.75);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  padding: 7px 14px;
+  border-radius: 8px;
+  position: relative;
+  transition: color 0.2s ease, background 0.2s ease;
+  text-decoration: none;
+}
+
+/* Underline bar indicator */
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 16px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--accent-color, #38bdf8);
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.navbar-nav .nav-link:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.navbar-nav .nav-link.active {
+  color: #fff;
+  background: rgba(56, 189, 248, 0.1);
+}
+
+/* ─── Icon & Label ────────────────────────────────── */
+.nav-icon {
+  font-size: 0.78rem;
+  opacity: 0.7;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.navbar-nav .nav-link:hover .nav-icon,
+.navbar-nav .nav-link.active .nav-icon {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.nav-label {
+  line-height: 1;
+}
+
+/* ─── Divider ─────────────────────────────────────── */
+.nav-divider {
+  width: 1px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.12);
+  margin: 0 6px;
+  border-radius: 1px;
+}
+
+/* ─── Language Toggle ─────────────────────────────── */
+.lang-toggle {
+  gap: 5px !important;
+  padding: 7px 11px !important;
+}
+
+.globe-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.lang-caret {
+  font-size: 0.6rem;
+  opacity: 0.5;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.lang-toggle:hover .lang-caret,
+.lang-toggle[aria-expanded="true"] .lang-caret {
+  opacity: 1;
+}
+
+.lang-toggle[aria-expanded="true"] .lang-caret {
+  transform: rotate(180deg);
+}
+
+/* ─── Language Dropdown ───────────────────────────── */
+.lang-dropdown {
+  background: rgba(13, 20, 40, 0.97);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 10px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  padding: 6px;
+  min-width: 130px;
+  backdrop-filter: blur(12px);
+}
+
+.lang-dropdown .dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(200, 215, 240, 0.8);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 7px;
+  transition: background 0.15s ease, color 0.15s ease;
+  background: transparent;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.lang-dropdown .dropdown-item:hover {
+  background: rgba(56, 189, 248, 0.12);
+  color: #fff;
+}
+
+.lang-flag {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* ─── Scroll-triggered class (optional JS) ───────── */
+/*
+  Add this to your main component or Navbar:
+
+  useEffect(() => {
+    const nav = document.querySelector('.custom-navbar');
+    const handler = () =>
+      nav?.classList.toggle('scrolled', window.scrollY > 20);
+    window.addEventListener('scroll', handler);
+    return () => window.removeEventListener('scroll', handler);
+  }, []);
+*/

@@ -1,0 +1,28 @@
+.hero-principal {
+  display: flex;
+  flex-direction: column; /* 👈 clave */
+  align-items: center;    /* centra horizontalmente */
+  text-align: center;
+}
+
+.hero-imagen-container {
+  margin-bottom: 1.5rem; /* espacio entre imagen y nombre */
+}
+
+.hero-imagen-desarrollador {
+  margin-top: 4rem;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.hero-inferior-imagen {
+  max-width: 700px;
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+}
+
