@@ -1,0 +1,140 @@
+/* ── Section ─────────────────────────────────── */
+.projects-section {
+  background-color: var(--bg-section);
+  padding: 7rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* Mismos gradientes radiales que About, posiciones invertidas */
+.projects-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 55% 45% at 90% 65%, rgba(52,211,153,0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 15% 20%, rgba(129,140,248,0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* Mismo grid sutil */
+.projects-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+}
+
+/* ── Container ───────────────────────────────── */
+.projects-section .container {
+  max-width: 860px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Eyebrow ─────────────────────────────────── */
+.section-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-3);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.section-eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 1px;
+  background: var(--accent-3);
+}
+
+/* ── Título ──────────────────────────────────── */
+.section-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  font-weight: 800;
+  color: var(--text-hi);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin: 0 0 1rem;
+}
+
+.section-title span {
+  background: linear-gradient(100deg, var(--accent-3), var(--accent-1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Descripción ─────────────────────────────── */
+.section-description {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--text-mid);
+  max-width: 520px;
+  margin: 0 0 3.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--card-border);
+}
+
+/* ── More projects ───────────────────────────── */
+.more-projects {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 2rem;
+  border-top: 1px solid var(--card-border);
+}
+
+.more-projects a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--accent-3);
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  border: 1px solid rgba(52, 211, 153, 0.2);
+  background: rgba(52, 211, 153, 0.06);
+  transition: background 0.25s, border-color 0.25s, transform 0.2s;
+}
+
+.more-projects a:hover {
+  background: rgba(52, 211, 153, 0.12);
+  border-color: rgba(52, 211, 153, 0.4);
+  transform: translateX(3px);
+}
+
+/* ── Animations ──────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.projects-section .section-eyebrow    { animation: fadeUp 0.6s ease both; }
+.projects-section .section-title      { animation: fadeUp 0.6s 0.1s ease both; }
+.projects-section .section-description{ animation: fadeUp 0.6s 0.2s ease both; }
+.projects-section .more-projects      { animation: fadeUp 0.6s 0.4s ease both; }
+
+/* ── Responsive ──────────────────────────────── */
+@media (max-width: 640px) {
+  .projects-section {
+    padding: 5rem 1.25rem;
+  }
+  .more-projects {
+    justify-content: center;
+  }
+}

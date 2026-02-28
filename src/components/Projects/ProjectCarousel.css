@@ -1,0 +1,8 @@
+.swiper {
+  padding: 2rem 0;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: white;
+}
