@@ -1,6 +1,6 @@
 import React from "react";
-import {InfoCard} from "../InfoCard/InfoCard";
-import { infoData } from "../../data/InfoData";
+import { InfoCard } from "../InfoCard/InfoCard";
+import { infoData } from "../../data/experience.data";
 import "./About.css";
 
 const About = () => {

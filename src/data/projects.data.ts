@@ -1,9 +1,9 @@
-import videogamestore from "../../images/videogameStore.png";
-import inventorysystem from "../../images/InventoryPage.png";
-import chataisystem from "../../images/ConversationLuke.png";
-import moviessystem from "../../images/Movies.png";
+import videogamestore from "../images/videogameStore.png";
+import inventorysystem from "../images/InventoryPage.png";
+import chataisystem from "../images/ConversationLuke.png";
+import moviessystem from "../images/Movies.png";
 
-import type { Project } from "./types";
+import type { Project } from "../components/Projects/types";
 
 export const projects: Project[] = [
   {

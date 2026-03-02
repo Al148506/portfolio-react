@@ -1,5 +1,5 @@
 import React from "react";
-import type { InfoData } from "../../data/InfoData";
+import type { InfoData } from "../../data/experience.data";
 import "./InfoCard.css";
 
 export const InfoCard: React.FC<InfoData> = ({
@@ -14,7 +14,6 @@ export const InfoCard: React.FC<InfoData> = ({
   return (
     <div className="col-12 col-md-4">
       <div className="info-card">
-        
         <div className="info-card-header">
           <div className="info-card-icon">
             <i className={`bi ${icon}`} />
