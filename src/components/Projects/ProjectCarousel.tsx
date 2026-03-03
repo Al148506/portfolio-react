@@ -6,13 +6,13 @@ import "./ProjectCarousel.css";
 import { projects } from "../../data/projects.data";
 import { ProjectCard } from "./ProjectCard";
 import { useState } from "react";
-import ProjectModal  from "./ProjectModal";
-import { projectsModalData } from "../../data/projects.modal.data"
-import type {ProjectModalData} from "../../data/projects.modal.data"
-
+import ProjectModal from "./ProjectModal";
+import { projectsModalData } from "../../data/projects.modal.data";
+import type { ProjectModalData } from "../../data/projects.modal.data";
 
 export const ProjectCarousel = () => {
-  const [selectedProject, setSelectedProject] = useState<ProjectModalData | null>(null);
+  const [selectedProject, setSelectedProject] =
+    useState<ProjectModalData | null>(null);
 
   return (
     <>
@@ -22,6 +22,7 @@ export const ProjectCarousel = () => {
         spaceBetween={0}
         slidesPerView={1}
         centeredSlides
+        loop
       >
         {projects.map((project) => (
           <SwiperSlide key={project.id}>

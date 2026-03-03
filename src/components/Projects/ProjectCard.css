@@ -8,17 +8,44 @@
   min-height: 420px;
 }
 
+.project-actions {
+  display: flex;
+  gap: 12px; /* espacio entre botones */
+  margin-top: 15px;
+}
+
+@media (max-width: 576px) {
+  .project-actions {
+    flex-direction: column;
+  }
+
+  .project-actions .btn {
+    width: 100%;
+  }
+}
 .showcase-image {
   flex: 1;
+  height: 400px; /* 🔥 tamaño fijo */
 }
 
 .showcase-image img {
   width: 100%;
+  height: 100%; /* 🔥 importante */
   border-radius: 16px;
-  object-fit: cover;
+  object-fit: cover; /* mantiene proporción y recorta */
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
+@media (max-width: 768px) {
+  .showcase-card {
+    flex-direction: column;
+  }
 
+  .showcase-image {
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9; /* 🔥 moderno y elegante */
+  }
+}
 .showcase-content {
   flex: 1;
 }

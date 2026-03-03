@@ -1,4 +1,7 @@
+export type InfoType = "work" | "freelance" | "education";
+
 export interface InfoData {
+  type: InfoType;
   icon: string;
   title: string;
   subtitle?: string;
@@ -10,6 +13,7 @@ export interface InfoData {
 
 export const infoData: InfoData[] = [
   {
+    type: "work",
     icon: "bi-briefcase-fill",
     title: "Professional Experience",
     subtitle: "IT Intern",
@@ -23,6 +27,21 @@ export const infoData: InfoData[] = [
     badges: ["ASP.NET MVC", "GitHub", "Trello"],
   },
   {
+    type: "freelance",
+    icon: "bi-code-slash",
+    title: "Freelance Developer",
+    subtitle: "Full-Stack Developer",
+    organization: " ",
+    period: "2024 - Present",
+    listItems: [
+      "Designed and developed full-stack web applications using ASP.NET and JS Frameworks.",
+      "Built RESTful APIs with JWT authentication and user role management",
+      "Streamlined deployment workflows using Azure and Firebase",
+    ],
+    badges: ["ASP.NET Core", "JavaScript", "Entity Framework", "REST APIs"],
+  },
+  {
+    type: "education",
     icon: "bi-mortarboard-fill",
     title: "Education",
     subtitle: "Bachelor's & Master's in Computer Science",
@@ -30,21 +49,8 @@ export const infoData: InfoData[] = [
     listItems: [
       "Bachelor's Degree completed: Dec. 2021",
       "Master's Degree completed: Jun. 2024",
-      
       "Master’s thesis: Accessible serious game for mathematics learning (visually impaired students)",
-    
     ],
-    badges: ["Software Architecture", "Research ", "Accessibility"]
-  },
-  {
-    icon: "bi-gear-fill",
-    title: "Technical Skills",
-    listItems: [
-      "Backend: C#, ASP.NET MVC, REST API, Python",
-      "Frontend: React, Angular, HTML, CSS, JavaScript, Bootstrap",
-      "Databases: SQL Server, SQLite, MySQL",
-      "DevOps & Tools: Docker, Git, Trello, Postman, Azure",
-    ],
-    badges: ["C#", "ASP.NET", "SQL Server", "React"],
+    badges: ["Software Architecture", "Research", "Accessibility"],
   },
 ];
