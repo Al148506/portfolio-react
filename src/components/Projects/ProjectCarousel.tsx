@@ -23,6 +23,12 @@ export const ProjectCarousel = () => {
         slidesPerView={1}
         centeredSlides
         loop
+        breakpoints={{
+          0:   { slidesPerView: 1, spaceBetween: 0 },
+          480: { slidesPerView: 1, spaceBetween: 0 },
+          768: { slidesPerView: 1, spaceBetween: 0 },
+          1024:{ slidesPerView: 1, spaceBetween: 0 },
+        }}
       >
         {projects.map((project) => (
           <SwiperSlide key={project.id}>

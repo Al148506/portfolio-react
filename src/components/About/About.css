@@ -85,7 +85,6 @@
 }
 
 .about-title {
-  font-family: "Syne", sans-serif;
   font-size: clamp(2.2rem, 6vw, 3.4rem);
   font-weight: 800;
   color: var(--text-hi);

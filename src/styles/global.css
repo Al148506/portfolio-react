@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap");
+
 body {
   font-family: 'Inter', sans-serif;
   background-color: #0f172a; /* azul oscuro moderno */
@@ -22,5 +24,9 @@ body {
   border-radius: 50px;
   padding: 10px 25px;
   font-weight: 500;
+}
+
+h1, h2, h3 {
+  font-family: 'Space Grotesk', sans-serif;
 }
 

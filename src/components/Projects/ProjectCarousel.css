@@ -1,10 +1,36 @@
 .swiper {
-  padding: 2rem 0;
+  padding: 2rem 150px;
+  width: 100%;
 }
 
+/* Navigation arrows */
 .swiper-button-next,
 .swiper-button-prev {
-  color: white;
+  color: rgba(76, 201, 240, 0.7);
+  background: rgba(13, 27, 42, 0.7);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(76, 201, 240, 0.15);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  transition: all 0.25s ease;
 }
 
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: #4cc9f0;
+  border-color: rgba(76, 201, 240, 0.45);
+  background: rgba(13, 27, 42, 0.95);
+}
 
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .swiper {
+    padding: 1.5rem 20px;
+  }
+}

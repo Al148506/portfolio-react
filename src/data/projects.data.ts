@@ -2,7 +2,7 @@ import videogamestore from "../images/videogameStore.png";
 import inventorysystem from "../images/InventoryPage.png";
 import chataisystem from "../images/ConversationLuke.png";
 import moviessystem from "../images/Movies.png";
-
+import { importProjectImages } from "../helper/importProjectImages";
 import type { Project } from "../components/Projects/types";
 
 export const projects: Project[] = [
@@ -11,6 +11,7 @@ export const projects: Project[] = [
     title: "VideogameStore",
     description: "E-commerce web application for videogame sales.",
     image: videogamestore,
+    gallery: importProjectImages("VideogamePOS"),
     githubUrl: "https://github.com/Al148506/GameStore",
     liveUrl: "https://videogamestoreacg.web.app/",
     technologies: ["ASP.NET", "SQL Server", "Bootstrap"],
@@ -20,6 +21,7 @@ export const projects: Project[] = [
     title: "Inventory System",
     description: "Inventory management system built with ASP.NET.",
     image: inventorysystem,
+    gallery: importProjectImages("InventorySystem"),
     githubUrl: "https://github.com/Al148506/InventorySystem",
     liveUrl: "https://inventorysystemacg.azurewebsites.net/",
     technologies: ["ASP.NET Core", "Entity Framework"],
@@ -29,6 +31,7 @@ export const projects: Project[] = [
     title: "Chat AI System",
     description: "AI-powered chat system integrated with backend services.",
     image: chataisystem,
+    gallery: importProjectImages("ChatAISystem"),
     githubUrl: "https://github.com/Al148506/ChatAISystem",
     liveUrl: "https://chataisystemacg.azurewebsites.net/",
     technologies: ["ASP.NET Core", "Entity Framework"],
@@ -38,6 +41,7 @@ export const projects: Project[] = [
     title: "Cinema Management System",
     description: "Angular-based cinema management application.",
     image: moviessystem,
+    gallery: importProjectImages("MoviesSystem"),
     githubUrl: "https://github.com/Al148506/MoviesAngular",
     liveUrl: "https://moviesangularacg.web.app/",
     technologies: ["ASP.NET Core", "Entity Framework"],
