@@ -1,16 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700&family=DM+Sans:wght@300;400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@600;700&family=DM+Sans:wght@300;400;500&display=swap");
 
 /* ─── Variables (hereda paleta del Hero) ─── */
 :root {
-  --tc-bg:          #07111d;
-  --tc-surface:     #0d1b2a;
-  --tc-border:      rgba(76, 201, 240, 0.12);
-  --tc-accent:      #4cc9f0;
-  --tc-accent-2:    #4361ee;
-  --tc-text-muted:  #4a6580;
-  --tc-text:        #c2d3e8;
-  --tc-white:       #f0f6ff;
-  --tc-glow:        rgba(76, 201, 240, 0.18);
+  --tc-bg: #07111d;
+  --tc-surface: #0d1b2a;
+  --tc-border: rgba(76, 201, 240, 0.12);
+  --tc-accent: #4cc9f0;
+  --tc-accent-2: #4361ee;
+  --tc-text-muted: #4a6580;
+  --tc-text: #c2d3e8;
+  --tc-white: #f0f6ff;
+  --tc-glow: rgba(76, 201, 240, 0.18);
 }
 
 /* ══════════════════════════════
@@ -20,16 +20,20 @@
   position: relative;
   padding: 100px 0 90px;
   background:
-    radial-gradient(ellipse 70% 50% at 50% 100%, rgba(67,97,238,0.07) 0%, transparent 65%),
+    radial-gradient(
+      ellipse 70% 50% at 50% 100%,
+      rgba(67, 97, 238, 0.07) 0%,
+      transparent 65%
+    ),
     linear-gradient(180deg, #0a1628 0%, var(--tc-bg) 40%, #08121f 100%);
   overflow: hidden;
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
 }
 
 /* Thin top & bottom border lines */
 .tech-section::before,
 .tech-section::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   right: 0;
@@ -38,13 +42,17 @@
     90deg,
     transparent 0%,
     var(--tc-border) 20%,
-    rgba(76,201,240,0.3) 50%,
+    rgba(76, 201, 240, 0.3) 50%,
     var(--tc-border) 80%,
     transparent 100%
   );
 }
-.tech-section::before { top: 0; }
-.tech-section::after  { bottom: 0; }
+.tech-section::before {
+  top: 0;
+}
+.tech-section::after {
+  bottom: 0;
+}
 
 /* ══════════════════════════════
    HEADER
@@ -69,7 +77,7 @@
 
 .tech-eyebrow::before,
 .tech-eyebrow::after {
-  content: '';
+  content: "";
   display: block;
   height: 1px;
   width: 32px;
@@ -80,17 +88,21 @@
 }
 
 .section-title {
-
   font-size: clamp(1.8rem, 3vw, 2.5rem);
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--tc-white);
   margin: 0;
   line-height: 1.1;
+  font-family: "Space Grotesk", sans-serif;
 }
 
 .section-title span {
-  background: linear-gradient(120deg, var(--tc-white) 0%, var(--tc-accent) 100%);
+  background: linear-gradient(
+    120deg,
+    var(--tc-white) 0%,
+    var(--tc-accent) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -109,7 +121,7 @@
 /* Fade masks on left & right */
 .tech-slider::before,
 .tech-slider::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   bottom: 0;
@@ -155,7 +167,7 @@
   transition:
     border-color 0.3s ease,
     background 0.3s ease,
-    transform 0.3s cubic-bezier(.22,1,.36,1),
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
     box-shadow 0.3s ease;
   cursor: default;
 }
@@ -165,9 +177,9 @@
   background: rgba(76, 201, 240, 0.05);
   transform: translateY(-6px);
   box-shadow:
-    0 0 0 1px rgba(76,201,240,0.15),
-    0 12px 30px rgba(0,0,0,0.4),
-    0 0 20px rgba(76,201,240,0.08);
+    0 0 0 1px rgba(76, 201, 240, 0.15),
+    0 12px 30px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(76, 201, 240, 0.08);
 }
 
 /* Icon wrapper */
@@ -184,22 +196,23 @@
   width: 40px;
   height: 40px;
   object-fit: contain;
-  transition: filter 0.3s ease, transform 0.3s ease;
-  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
+  transition:
+    filter 0.3s ease,
+    transform 0.3s ease;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
   position: relative;
   z-index: 1;
 }
 
 .tech-item:hover img {
   transform: scale(1.15);
-  filter:
-    drop-shadow(0 0 8px var(--tc-glow))
-    drop-shadow(0 2px 6px rgba(0,0,0,0.4));
+  filter: drop-shadow(0 0 8px var(--tc-glow))
+    drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
 }
 
 /* Glow ring that appears on hover */
 .tech-icon-wrap::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: -4px;
   border-radius: 50%;
@@ -214,7 +227,7 @@
 
 /* Label */
 .tech-item p {
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-size: 0.72rem;
   font-weight: 500;
   letter-spacing: 0.04em;
@@ -249,6 +262,10 @@
    ANIMATION
 ══════════════════════════════ */
 @keyframes tech-scroll {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-33.333%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-33.333%);
+  }
 }

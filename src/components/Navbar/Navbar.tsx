@@ -40,6 +40,15 @@ function Navbar() {
               </a>
             </li>
 
+               <li className="nav-item">
+              <a className="nav-link" href="#technologies">
+                <span className="nav-icon">
+                  <i className="fas fa-id-card"></i>
+                </span>
+                <span className="nav-label">Technologies</span>
+              </a>
+            </li>
+
             <li className="nav-item">
               <a className="nav-link" href="#projects">
                 <span className="nav-icon">

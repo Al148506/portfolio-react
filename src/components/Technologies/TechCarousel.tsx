@@ -3,7 +3,7 @@ import { technologies } from "../../data/technologies.data";
 
 export const TechCarousel = () => {
   return (
-    <section className="tech-section">
+    <section className="tech-section" id="technologies">
 
       {/* Header */}
       <div className="tech-header">

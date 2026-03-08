@@ -12,44 +12,45 @@ export const InfoCard: React.FC<InfoData> = ({
   badges = [],
 }) => {
   return (
-    <div className="col-12 col-md-4">
-      <div className="info-card">
-        <div className="info-card-header">
-          <div className="info-card-icon">
-            <i className={`bi ${icon}`} />
-          </div>
-          <h3 className="info-card-title">{title}</h3>
+    <div className="info-card">
+
+      {/* Header */}
+      <div className="info-card__header">
+        <div className="info-card__icon">
+          <i className={`bi ${icon}`} />
         </div>
-
-        {(subtitle || organization) && (
-          <div className="info-card-meta">
-            {subtitle && <strong>{subtitle}</strong>}
-            {organization && (
-              <span className="info-card-organization">
-                {organization} {period && `• ${period}`}
-              </span>
-            )}
-          </div>
-        )}
-
-        {listItems.length > 0 && (
-          <ul className="info-card-list">
-            {listItems.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
-        )}
-
-        {badges.length > 0 && (
-          <div className="info-card-badges">
-            {badges.map((badge, index) => (
-              <span key={index} className="info-card-badge">
-                {badge}
-              </span>
-            ))}
-          </div>
-        )}
+        <div className="info-card__heading">
+          <h3 className="info-card__title">{title}</h3>
+          {subtitle && <p className="info-card__subtitle">{subtitle}</p>}
+        </div>
       </div>
+
+      {/* Organization + period */}
+      {organization && (
+        <div className="info-card__meta">
+          <span className="info-card__org">{organization}</span>
+          {period && <span className="info-card__period">{period}</span>}
+        </div>
+      )}
+
+      {/* List */}
+      {listItems.length > 0 && (
+        <ul className="info-card__list">
+          {listItems.map((item, index) => (
+            <li key={index} className="info-card__list-item">{item}</li>
+          ))}
+        </ul>
+      )}
+
+      {/* Badges */}
+      {badges.length > 0 && (
+        <div className="info-card__badges">
+          {badges.map((badge, index) => (
+            <span key={index} className="info-card__badge">{badge}</span>
+          ))}
+        </div>
+      )}
+
     </div>
   );
 };

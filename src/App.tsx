@@ -5,6 +5,7 @@ import About from "./components/About/About";
 import { Projects } from "./components/Projects/ProjectSection";
 import { TechCarousel } from "./components/Technologies/TechCarousel";
 import { Contact } from "./components/Contact/Contact";
+import Footer from "./components/Footer/Footer";
 function App() {
   return (
     <>
@@ -14,7 +15,7 @@ function App() {
       <TechCarousel/>
       <Projects/>
       <Contact/>
-      
+      <Footer/>
     </>
   );
 }
