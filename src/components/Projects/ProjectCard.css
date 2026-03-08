@@ -26,6 +26,12 @@
   font-family: "DM Sans", sans-serif;
   position: relative;
   width: 100%;
+
+  /* ✅ Evita que esta card cree un stacking context que rompa position:fixed */
+  transform: none;
+  filter: none;
+  will-change: auto;
+  isolation: auto;
 }
 
 /* ══════════════════════════════
@@ -34,19 +40,19 @@
 .showcase-image {
   position: relative;
   width: 100%;
-  height: 460px; /* ← tamaño fijo grande */
+  height: 460px;
   flex-shrink: 0;
+  cursor: zoom-in;
 }
 
-/* Corner accent lines */
-.showcase-image::before,
-.showcase-image::after {
+/* Corner accent lines
+   ✅ Sin z-index para no crear stacking context innecesario.
+   Se usan coordenadas negativas para posicionarlos, no z-index. */
+.showcase-image::before {
   content: "";
   position: absolute;
   z-index: 2;
   pointer-events: none;
-}
-.showcase-image::before {
   top: -6px;
   left: -6px;
   width: 28px;
@@ -55,7 +61,14 @@
   border-left: 2px solid var(--pc-accent);
   border-radius: 4px 0 0 0;
 }
+
+/* ✅ ::after ahora solo se usa para la esquina decorativa.
+   El tooltip "View Gallery" se mueve a un elemento real (ver abajo). */
 .showcase-image::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
   bottom: -6px;
   right: -6px;
   width: 28px;
@@ -88,7 +101,7 @@
     0 0 50px rgba(76, 201, 240, 0.12);
 }
 
-/* Overlay gradient at bottom of image */
+/* Overlay gradient */
 .showcase-image-overlay {
   position: absolute;
   bottom: 0;
@@ -98,6 +111,29 @@
   border-radius: 0 0 16px 16px;
   background: linear-gradient(to top, rgba(7, 17, 29, 0.6), transparent);
   pointer-events: none;
+}
+
+/* ✅ Tooltip "View Gallery" como elemento real en lugar de ::after,
+   así no compite con la esquina decorativa y no afecta el stacking context.
+   Añade <span class="showcase-image-hint">🔍 View Gallery</span>
+   dentro de .showcase-image en el JSX. */
+.showcase-image-hint {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 6px 10px;
+  font-size: 0.75rem;
+  border-radius: 6px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.showcase-image:hover .showcase-image-hint {
+  opacity: 1;
 }
 
 /* ══════════════════════════════
@@ -208,20 +244,15 @@
   font-family: "DM Sans", sans-serif;
   font-size: 0.9rem;
   font-weight: 600;
-
   padding: 0.6rem 1.3rem;
   border-radius: 8px;
-
   background: white;
   color: #2563eb;
   border: 2px solid #2563eb;
-
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-
   cursor: pointer;
-
   transition: all 0.25s ease;
 }
 
@@ -269,34 +300,4 @@
     width: 100%;
     justify-content: center;
   }
-}
-
-.showcase-image {
-  cursor: zoom-in;
-}
-
-.showcase-image:hover img {
-  transform: scale(1.03);
-}
-
-.showcase-image img {
-  transition: transform .3s ease;
-}
-
-.showcase-image::after {
-  content: "🔍 View Gallery";
-  position: absolute;
-  bottom: 15px;
-  right: 15px;
-  background: rgba(0,0,0,.6);
-  color: white;
-  padding: 6px 10px;
-  font-size: .75rem;
-  border-radius: 6px;
-  opacity: 0;
-  transition: opacity .3s;
-}
-
-.showcase-image:hover::after {
-  opacity: 1;
 }

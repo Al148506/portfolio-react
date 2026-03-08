@@ -1,14 +1,16 @@
 .swiper {
   padding: 2rem 150px;
   width: 100%;
+  /* ✅ Evita que Swiper cree un stacking context que atrape position:fixed */
+  isolation: auto;
 }
 
-/* Navigation arrows */
+/* ✅ backdrop-filter eliminado — era el culpable principal de romper
+   position:fixed en el GalleryModal. Se reemplaza con un fondo opaco. */
 .swiper-button-next,
 .swiper-button-prev {
   color: rgba(76, 201, 240, 0.7);
-  background: rgba(13, 27, 42, 0.7);
-  backdrop-filter: blur(8px);
+  background: rgba(13, 27, 42, 0.92);
   border: 1px solid rgba(76, 201, 240, 0.15);
   border-radius: 50%;
   width: 44px;
@@ -20,7 +22,7 @@
 .swiper-button-prev:hover {
   color: #4cc9f0;
   border-color: rgba(76, 201, 240, 0.45);
-  background: rgba(13, 27, 42, 0.95);
+  background: rgba(13, 27, 42, 0.98);
 }
 
 .swiper-button-next::after,

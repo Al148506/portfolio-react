@@ -1,7 +1,7 @@
 import { ProjectCarousel } from "./ProjectCarousel";
 import "./ProjectsSection.css";
 
-export const ProjectsSection = () => {
+export const Projects = () => {
   return (
     <section id="projects" className="projects-section">
       {/* Header dentro del container */}

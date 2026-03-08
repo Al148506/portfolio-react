@@ -57,7 +57,7 @@ export const ProjectCard = ({ project, onMoreDetails }: Props) => {
         </div>
       </div>
       {openGallery && project.gallery && (
-        <GalleryModal
+        <GalleryModal projectTitle={project.title}
           images={project.gallery}
           onClose={() => setOpenGallery(false)}
         />

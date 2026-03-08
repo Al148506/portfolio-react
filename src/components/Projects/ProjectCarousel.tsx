@@ -14,33 +14,25 @@ export const ProjectCarousel = () => {
   const [selectedProject, setSelectedProject] =
     useState<ProjectModalData | null>(null);
 
+  const handleMoreDetails = (id: string) => {
+    setSelectedProject(
+      projectsModalData.find((p: ProjectModalData) => p.id === id) ?? null
+    );
+  };
+
   return (
     <>
       <Swiper
         modules={[Navigation]}
         navigation
-        spaceBetween={0}
         slidesPerView={1}
-        centeredSlides
         loop
-        breakpoints={{
-          0:   { slidesPerView: 1, spaceBetween: 0 },
-          480: { slidesPerView: 1, spaceBetween: 0 },
-          768: { slidesPerView: 1, spaceBetween: 0 },
-          1024:{ slidesPerView: 1, spaceBetween: 0 },
-        }}
       >
         {projects.map((project) => (
           <SwiperSlide key={project.id}>
             <ProjectCard
               project={project}
-              onMoreDetails={() =>
-                setSelectedProject(
-                  projectsModalData.find(
-                    (p: ProjectModalData) => p.id === project.id,
-                  ) || null,
-                )
-              }
+              onMoreDetails={() => handleMoreDetails(project.id)}
             />
           </SwiperSlide>
         ))}

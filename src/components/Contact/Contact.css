@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap");
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   Contact Section
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.contact {
+  padding: 100px 0 120px;
+  font-family: "DM Sans", sans-serif;
+}
+
+/* ── Header ───────────────────────────── */
+.contact-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.contact-eyebrow {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #4cc9f0;
+  margin-bottom: 14px;
+  position: relative;
+  padding: 0 20px;
+}
+
+/* Líneas laterales del eyebrow */
+.contact-eyebrow::before,
+.contact-eyebrow::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 36px;
+  height: 1px;
+  background: rgba(76, 201, 240, 0.4);
+}
+.contact-eyebrow::before { right: 100%; margin-right: -20px; }
+.contact-eyebrow::after  { left: 100%;  margin-left: -20px; }
+
+.contact-title {
+  font-family: "Syne", sans-serif;
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #f0f6ff;
+  line-height: 1;
+  margin: 0 0 18px;
+}
+
+.contact-subtitle {
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(194, 211, 232, 0.7);
+  margin: 0;
+}
+
+/* ── Card ─────────────────────────────── */
+.contact-card {
+  position: relative;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 52px;
+  border-radius: 20px;
+  background: #0d1b2a;
+  border: 1px solid rgba(76, 201, 240, 0.1);
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.3),
+    0 24px 64px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+}
+
+/* Glow decorativo en la esquina superior izquierda */
+.contact-card__glow {
+  position: absolute;
+  top: -80px;
+  left: -80px;
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, rgba(67, 97, 238, 0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ── Form layout ──────────────────────── */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+/* ── Field ────────────────────────────── */
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-field label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(194, 211, 232, 0.5);
+  transition: color 0.2s;
+}
+
+.contact-field:focus-within label {
+  color: #4cc9f0;
+}
+
+.contact-field input,
+.contact-field textarea {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 13px 16px;
+  color: #f0f6ff;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  outline: none;
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+  resize: none;
+}
+
+.contact-field input::placeholder,
+.contact-field textarea::placeholder {
+  color: rgba(194, 211, 232, 0.25);
+}
+
+.contact-field input:hover,
+.contact-field textarea:hover {
+  border-color: rgba(76, 201, 240, 0.2);
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.contact-field input:focus,
+.contact-field textarea:focus {
+  border-color: rgba(76, 201, 240, 0.5);
+  background: rgba(76, 201, 240, 0.04);
+  box-shadow: 0 0 0 3px rgba(76, 201, 240, 0.08);
+}
+
+/* ── Submit button ────────────────────── */
+.contact-btn {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 14px 32px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #fff;
+
+  background: linear-gradient(135deg, #4361ee, #4cc9f0);
+  box-shadow: 0 4px 20px rgba(67, 97, 238, 0.4);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s;
+}
+
+.contact-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(67, 97, 238, 0.55);
+}
+
+.contact-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.contact-btn--sending,
+.contact-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* Spinner */
+.contact-btn__spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── SweetAlert2 custom theme ─────────── */
+.swal-contact-popup {
+  border: 1px solid rgba(76, 201, 240, 0.15) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* ── Responsive ───────────────────────── */
+@media (max-width: 640px) {
+  .contact-card {
+    padding: 32px 24px;
+  }
+
+  .contact-row {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

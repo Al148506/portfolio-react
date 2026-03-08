@@ -1,31 +1,296 @@
-.gallery-modal {
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;1,9..40,300&display=swap");
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   GalleryModal
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+body.modal-open {
+  overflow: hidden;
+}
+
+.gm {
+  --accent:    #4cc9f0;
+  --accent-2:  #4361ee;
+  --text:      #f0f6ff;
+  --muted:     rgba(240, 246, 255, 0.35);
+  --border:    rgba(240, 246, 255, 0.1);
+  --ease:      cubic-bezier(0.4, 0, 0.2, 1);
+
+  --navbar-h: 57px;
+
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.9);
-  z-index: 999;
+  top: var(--navbar-h);
+  width: 100vw;
+  height: calc(100vh - var(--navbar-h));
+  z-index: 9999;
 
+  display: grid;
+  grid-template-rows: 64px 1fr 72px;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "header"
+    "stage"
+    "footer";
+
+  animation: gm-in 0.3s var(--ease) both;
+}
+
+@keyframes gm-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Fondo desenfocado ────────────────── */
+.gm__bg {
+  position: absolute;
+  inset: -60px;
+  background-size: cover;
+  background-position: center;
+  filter: blur(52px) brightness(0.22) saturate(0.6);
+  transition: background-image 0.5s var(--ease);
+  will-change: background-image;
+}
+
+/* Capa de color sutil que armoniza con la paleta del sitio */
+.gm__vignette {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 90% 75% at 50% 50%, transparent 20%, rgba(7, 17, 29, 0.7) 100%),
+    linear-gradient(180deg, rgba(7, 17, 29, 0.5) 0%, transparent 30%, transparent 70%, rgba(7, 17, 29, 0.6) 100%);
+  pointer-events: none;
+}
+
+/* ── Header ───────────────────────────── */
+.gm__header {
+  grid-area: header;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(7, 17, 29, 0.3);
+}
+
+.gm__header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Separador vertical entre título y contador */
+.gm__header-left::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 16px;
+  background: var(--border);
+}
+
+.gm__project-title {
+  font-family: "Syne", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.gm__counter {
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.gm__counter b {
+  color: var(--text);
+  font-weight: 400;
+}
+
+.gm__counter-sep {
+  color: var(--border);
+}
+
+/* Botón cerrar */
+.gm__close {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: var(--muted);
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.25s;
+}
+
+.gm__close:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: var(--text);
+  transform: rotate(90deg);
+}
+
+/* ── Stage ────────────────────────────── */
+.gm__stage {
+  grid-area: stage;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 16px 0;
+}
+
+.gm__image {
+  max-width: calc(100vw - 140px);
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow:
+    0 0 0 1px var(--border),
+    0 24px 80px rgba(0, 0, 0, 0.65);
+  display: block;
+  user-select: none;
+}
+
+.gm__image--next {
+  animation: slide-from-right 0.3s var(--ease) both;
+}
+
+.gm__image--prev {
+  animation: slide-from-left 0.3s var(--ease) both;
+}
+
+@keyframes slide-from-right {
+  from { opacity: 0; transform: translateX(36px) scale(0.985); }
+  to   { opacity: 1; transform: translateX(0)    scale(1); }
+}
+
+@keyframes slide-from-left {
+  from { opacity: 0; transform: translateX(-36px) scale(0.985); }
+  to   { opacity: 1; transform: translateX(0)     scale(1); }
+}
+
+/* ── Flechas (dentro del stage) ──────── */
+.gm__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  padding: 40px;
-}
-
-.gallery-modal img {
-  max-width: 90vw;
-  max-height: 80vh;
-  object-fit: contain;
-}
-
-.gallery-close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-
-  background: none;
-  border: none;
-
-  font-size: 2rem;
-  color: white;
+  background: rgba(7, 17, 29, 0.55);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: var(--muted);
   cursor: pointer;
+
+  transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+.gm__nav--prev { left: 20px; }
+.gm__nav--next { right: 20px; }
+
+.gm__nav:hover {
+  background: rgba(76, 201, 240, 0.12);
+  border-color: rgba(76, 201, 240, 0.4);
+  color: var(--accent);
+  transform: translateY(-50%) scale(1.08);
+}
+
+/* ── Footer: caption + dots ──────────── */
+.gm__footer {
+  grid-area: footer;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 24px;
+  border-top: 1px solid var(--border);
+  background: rgba(7, 17, 29, 0.3);
+}
+
+/* Caption */
+.gm__caption {
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.78rem;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+  text-align: center;
+  margin: 0;
+  min-height: 1em;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.gm__caption--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Dots */
+.gm__dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.gm__dot {
+  width: 20px;
+  height: 2px;
+  border-radius: 1px;
+  border: none;
+  background: var(--muted);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.25s, width 0.25s var(--ease);
+}
+
+.gm__dot--active {
+  background: var(--accent);
+  width: 32px;
+}
+
+/* ── Responsive ──────────────────────── */
+@media (max-width: 600px) {
+  .gm__image {
+    max-width: calc(100vw - 96px);
+  }
+
+  .gm__nav {
+    width: 36px;
+    height: 36px;
+  }
+
+  .gm__nav--prev { left: 10px; }
+  .gm__nav--next { right: 10px; }
+
+  .gm__project-title {
+    font-size: 0.7rem;
+  }
 }
