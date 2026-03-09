@@ -41,30 +41,33 @@ const EmailIcon = () => (
   </svg>
 );
 
+const navLinks = [
+  { label: "Introduction", href: "#introduction" },
+  { label: "About Me", href: "#about-me" },
+  { label: "Technologies", href: "#technologies" },
+  { label: "Projects", href: "#projects" },
+  { label: "Contact", href: "#contact" },
+];
+
 export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
     <footer className="footer">
-      {/* Línea decorativa superior */}
       <div className="footer-topline" />
 
       <div className="footer-inner">
-        {/* Brand */}
+        {/* ── Brand ── */}
         <div className="footer-brand">
-          <p className="footer-name">Alejandro Castañeda</p>
+          <p className="footer-name"> Thanks for visiting my portfolio.</p>
           <p className="footer-tagline">
-            Full-stack developer focused on building modern web applications
-            with clean architecture and great user experiences.
+            Let's build something great together.
           </p>
 
           <div className="footer-cta">
-            <a href="#contact" className="footer-btn footer-btn--primary">
-              Contact Me
-            </a>
             <a
               href="/AlejandroCastanedaCV.pdf"
-              className="footer-btn footer-btn--ghost"
+              className="footer-btn footer-btn--primary"
               download
             >
               Download CV
@@ -72,38 +75,52 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Social */}
-        <div className="footer-social">
+        {/* ── Nav ── */}
+        <div className="footer-col">
+          <span className="footer-section-label">Navigate</span>
+          <nav className="footer-nav">
+            {navLinks.map(({ label, href }) => (
+              <a key={href} href={href} className="footer-nav-link">
+                {label}
+              </a>
+            ))}
+          </nav>
+        </div>
+
+        {/* ── Social ── */}
+        <div className="footer-col">
           <span className="footer-section-label">Connect</span>
-
-          <a
-            href="https://github.com/Al148506"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="footer-social-link"
-          >
-            <GithubIcon />
-            GitHub
-          </a>
-
-          <a
-            href="https://www.linkedin.com/in/alejandro-castaneda-garcia/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="footer-social-link"
-          >
-            <LinkedinIcon />
-            LinkedIn
-          </a>
-
-          <a href="mailto:al148506@hotmail.com" className="footer-social-link">
-            <EmailIcon />
-            al148506@hotmail.com
-          </a>
+          <div className="footer-social">
+            <a
+              href="https://github.com/Al148506"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-social-link"
+            >
+              <GithubIcon />
+              GitHub
+            </a>
+            <a
+              href="https://www.linkedin.com/in/alejandro-castaneda-garcia/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-social-link"
+            >
+              <LinkedinIcon />
+              LinkedIn
+            </a>
+            <a
+              href="mailto:al148506@hotmail.com"
+              className="footer-social-link"
+            >
+              <EmailIcon />
+              Email
+            </a>
+          </div>
         </div>
       </div>
 
-      {/* Bottom bar */}
+      {/* ── Bottom bar ── */}
       <div className="footer-bottom">
         <span className="footer-built">
           Built with
@@ -111,9 +128,8 @@ export default function Footer() {
           <span className="footer-built__sep">+</span>
           <span className="footer-built__tech">Vite</span>
           <span className="footer-built__sep">+</span>
-          <span className="footer-built__tech">Typescript</span>
+          <span className="footer-built__tech">TypeScript</span>
         </span>
-
         <span className="footer-copy">© {year} Alejandro Castañeda</span>
       </div>
     </footer>

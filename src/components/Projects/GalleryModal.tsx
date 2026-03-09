@@ -66,7 +66,7 @@ export const GalleryModal = ({ images, onClose, projectTitle }: Props) => {
         </div>
 
         <button className="gm__close" onClick={onClose} aria-label="Cerrar">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <svg width="32" height="32" viewBox="0 0 16 16" fill="none">
             <path
               d="M1.5 1.5L14.5 14.5M14.5 1.5L1.5 14.5"
               stroke="currentColor"
@@ -85,7 +85,7 @@ export const GalleryModal = ({ images, onClose, projectTitle }: Props) => {
             onClick={() => navigate("prev")}
             aria-label="Anterior"
           >
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <svg width="40" height="40" viewBox="0 0 20 20" fill="none">
               <path d="M13 3L6 10L13 17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
@@ -105,7 +105,7 @@ export const GalleryModal = ({ images, onClose, projectTitle }: Props) => {
             onClick={() => navigate("next")}
             aria-label="Siguiente"
           >
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <svg width="40" height="40" viewBox="0 0 20 20" fill="none">
               <path d="M7 3L14 10L7 17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
