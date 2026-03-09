@@ -1,0 +1,144 @@
+{
+  "navbar": {
+    "introduction": "Introduction",
+    "aboutMe": "About Me",
+    "technologies": "Technologies",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm <1>Alejandro Castaneda</1>",
+    "title": "Full-Stack Web<1/>Developer",
+    "description": "Specializing in ASP.NET & modern web technologies — crafting scalable, clean, and high-performance applications.",
+    "viewProjects": "View Projects",
+    "contactMe": "Contact Me",
+    "yearsExp": "Years exp.",
+    "projects": "Projects",
+    "technologies": "Technologies",
+    "available": "Available for hire"
+  },
+  "about": {
+    "eyebrow": "Who I am",
+    "title": "Turning ideas<1/>into <2>reliable systems</2>",
+    "bio": "I'm a <1>full-stack developer</1> with a backend mindset — focused on clean architecture, maintainable code, and systems that scale. I care about <2>how</2> software is built, not just that it works.",
+    "stats": {
+      "fullStack": {
+        "label": "Full-Stack",
+        "sub": "From APIs to polished UIs"
+      },
+      "codeQuality": {
+        "label": "Code Quality",
+        "sub": "Readable, tested, maintainable"
+      },
+      "improving": {
+        "label": "Always Improving",
+        "sub": "Better decisions every iteration"
+      }
+    }
+  },
+  "experience": {
+    "workTitle": "Professional Experience",
+    "freelanceTitle": "Freelance Developer",
+    "educationTitle": "Education",
+    "workItems": [
+      "Developed and maintained internal web applications using ASP.NET MVC and SQL Server.",
+      "Optimized SQL queries and integrated systems through REST API consumption.",
+      "Performed functional testing and created technical and user documentation.",
+      "Managed version control with GitHub and tracked tasks using Trello."
+    ],
+    "freelanceItems": [
+      "Designed and developed full-stack web applications using ASP.NET Core, JavaScript frameworks, and SQL databases.",
+      "Built RESTful APIs with JWT authentication, role-based access control, and scalable backend architecture.",
+      "Implemented modern frontend interfaces and deployed applications using cloud platforms such as Azure and Firebase."
+    ],
+    "educationItems": [
+      "Bachelor’s Degree completed in December 2021.",
+      "Master’s Degree completed in June 2024, graduated Summa Cum Laude.",
+      "Master’s thesis: Development of an accessible serious game for mathematics learning for visually impaired students."
+    ],
+    "freelanceSubtitle": "Full-Stack Developer",
+    "educationSubtitle": "Bachelor's & Master's in Computer Science",
+    "workSubtitle": "IT Intern"
+  },
+  "tech": {
+    "title": "Technologies",
+    "subtitle": "Tools & languages I work with",
+    "summarize": "technologies & counting"
+  },
+  "projectsSection": {
+    "title": "Featured Projects",
+    "subtitle": "Some of my recent work",
+    "viewProject": "See more details",
+    "github": "Source Code",
+    "label": "Featured Project",
+    "videogameStore": {
+      "title": "VideogameStore",
+      "description": "E-commerce web application for videogame sales.",
+      "objective": "A full-stack e-commerce web application designed to manage videogame sales, including authentication, role-based access, and complete product management. The goal was to simulate a real-world online store with structured backend architecture and database relationships.",
+      "challenges": "Designing proper entity relationships between users, roles, and products required careful database modeling. Implementing secure authentication and ensuring clean separation between business logic and presentation layer was a key architectural challenge.",
+      "learning": "Strengthened my understanding of layered architecture, authentication flows, Entity Framework migrations, and the importance of separation of concerns in scalable systems."
+    },
+    "inventorySystem": {
+      "title": "Inventory System",
+      "description": "Inventory management system built with ASP.NET.",
+      "objective": "A web-based inventory management system built to handle product tracking, stock updates, and CRUD operations in a structured and maintainable way. The project focused on backend reliability and clean data handling.",
+      "challenges": "Ensuring data consistency when updating stock quantities and handling validation logic across multiple layers required thoughtful implementation. Managing database migrations while maintaining data integrity was also a key aspect.",
+      "learning": "Improved my experience working with Entity Framework, database migrations, validation patterns, and implementing structured CRUD operations with clean and readable backend logic."
+    },
+    "chatAi": {
+      "title": "Chat AI System",
+      "description": "AI-powered chat system integrated with backend services.",
+      "objective": "An AI-powered chat application that integrates backend services to process user messages and generate intelligent responses. The objective was to design a structured API capable of handling asynchronous communication and external service integration.",
+      "challenges": "Handling asynchronous communication between frontend and backend while managing API responses required careful error handling and response structuring. Deployment configuration and environment setup were also important technical steps.",
+      "learning": "Deepened my understanding of RESTful API design, asynchronous programming patterns, API integration, and deployment processes in Azure environments."
+    },
+    "cinemaSystem": {
+      "title": "Cinema Management System",
+      "description": "Angular-based cinema management application.",
+      "objective": "A full-stack cinema management application designed to handle movie listings, showtimes, and administrative management. The goal was to separate frontend and backend responsibilities using modern web technologies.",
+      "challenges": "Connecting the Angular frontend with the ASP.NET Core API required proper routing, data binding, and structured API responses. Managing state and ensuring smooth communication between client and server was a key challenge.",
+      "learning": "Gained stronger understanding of frontend-backend separation, REST API consumption, Angular component architecture, and structured full-stack application design."
+    },
+    "modalLabels": {
+      "objective": "Objective",
+      "technologies": "Technologies",
+      "challenges": "Challenges",
+      "learning": "Learning Outcomes",
+      "viewProject": "View Live Demo",
+      "gallery": "Project Gallery"
+    }
+  },
+  "projects": {
+    "eyebrow": "Selected Work",
+    "title": "Recent <1>Projects</1>",
+    "description": "Selected projects that showcase my backend and full-stack experience",
+    "viewMore": "View More Projects →"
+  },
+  "contact": {
+    "eyebrow": "Get in touch",
+    "title": "Let's talk.",
+    "subtitle": "Have a project in mind or just want to say hello?<1/>My inbox is always open.",
+    "nameLabel": "Name",
+    "namePlaceholder": "John Doe",
+    "emailLabel": "Email",
+    "emailPlaceholder": "john@example.com",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Tell me about your project...",
+    "sendingBtn": "Sending…",
+    "sendButton": "Send Message",
+    "successTitle": "Message sent!",
+    "successText": "I'll get back to you as soon as possible.",
+    "successBtn": "Got it",
+    "errorTitle": "Oops...",
+    "errorText": "Something went wrong. Please try again later.",
+    "errorBtn": "Try again"
+  },
+  "footer": {
+    "thanks": "Thanks for visiting my portfolio.",
+    "tagline": "Let's build something great together.",
+    "downloadCv": "Download CV",
+    "navigate": "Navigate",
+    "connect": "Connect",
+    "builtWith": "Built with"
+  }
+}

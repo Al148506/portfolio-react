@@ -1,13 +1,15 @@
+import { useTranslation } from "react-i18next";
 import "./TechCarousel.css";
 import { technologies } from "../../data/technologies.data";
 
 export const TechCarousel = () => {
+  const { t } = useTranslation();
   return (
     <section className="tech-section" id="technologies">
 
       {/* Header */}
       <div className="tech-header">
-        <p className="tech-eyebrow">What I work with</p>
+        <p className="tech-eyebrow"> {t('tech.subtitle')}</p>
         <h2 className="section-title">
           Tech <span>Stack</span>
         </h2>
@@ -29,7 +31,7 @@ export const TechCarousel = () => {
 
       {/* Count */}
       <p className="tech-count">
-        <strong>{technologies.length}</strong> technologies &amp; counting
+        <strong>{technologies.length}</strong> {t('tech.summarize')}
       </p>
 
     </section>

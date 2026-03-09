@@ -1,9 +1,11 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
+import { useTranslation, Trans } from "react-i18next";
 import "./Contact.css";
 
 export const Contact = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -31,13 +33,13 @@ export const Contact = () => {
       .then(() => {
         Swal.fire({
           icon: "success",
-          title: "Message sent!",
-          text: "I'll get back to you as soon as possible.",
+          title: t('contact.successTitle'),
+          text: t('contact.successText'),
           background: "#0d1b2a",
           color: "#f0f6ff",
           iconColor: "#4cc9f0",
           confirmButtonColor: "#4361ee",
-          confirmButtonText: "Got it",
+          confirmButtonText: t('contact.successBtn'),
           customClass: {
             popup: "swal-contact-popup",
             title: "swal-contact-title",
@@ -49,13 +51,13 @@ export const Contact = () => {
         console.error("Error:", error);
         Swal.fire({
           icon: "error",
-          title: "Oops...",
-          text: "Something went wrong. Please try again later.",
+          title: t('contact.errorTitle'),
+          text: t('contact.errorText'),
           background: "#0d1b2a",
           color: "#f0f6ff",
           iconColor: "#f07b4c",
           confirmButtonColor: "#4361ee",
-          confirmButtonText: "Try again",
+          confirmButtonText: t('contact.errorBtn'),
           customClass: {
             popup: "swal-contact-popup",
           },
@@ -69,11 +71,13 @@ export const Contact = () => {
       <div className="container">
 
         <div className="contact-header">
-          <span className="contact-eyebrow">Get in touch</span>
-          <h2 className="contact-title">Let's talk.</h2>
+          <span className="contact-eyebrow">{t('contact.eyebrow')}</span>
+          <h2 className="contact-title">{t('contact.title')}</h2>
           <p className="contact-subtitle">
-            Have a project in mind or just want to say hello?<br />
-            My inbox is always open.
+            <Trans i18nKey="contact.subtitle" components={{ 1: <br /> }}>
+              Have a project in mind or just want to say hello?<br />
+              My inbox is always open.
+            </Trans>
           </p>
         </div>
 
@@ -86,12 +90,12 @@ export const Contact = () => {
 
             <div className="contact-row">
               <div className="contact-field">
-                <label htmlFor="name">Name</label>
+                <label htmlFor="name">{t('contact.nameLabel')}</label>
                 <input
                   id="name"
                   type="text"
                   name="name"
-                  placeholder="John Doe"
+                  placeholder={t('contact.namePlaceholder')}
                   value={formData.name}
                   onChange={handleChange}
                   required
@@ -100,12 +104,12 @@ export const Contact = () => {
               </div>
 
               <div className="contact-field">
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email">{t('contact.emailLabel')}</label>
                 <input
                   id="email"
                   type="email"
                   name="email"
-                  placeholder="john@example.com"
+                  placeholder={t('contact.emailPlaceholder')}
                   value={formData.email}
                   onChange={handleChange}
                   required
@@ -115,11 +119,11 @@ export const Contact = () => {
             </div>
 
             <div className="contact-field">
-              <label htmlFor="message">Message</label>
+              <label htmlFor="message">{t('contact.messageLabel')}</label>
               <textarea
                 id="message"
                 name="message"
-                placeholder="Tell me about your project..."
+                placeholder={t('contact.messagePlaceholder')}
                 rows={5}
                 value={formData.message}
                 onChange={handleChange}
@@ -135,11 +139,11 @@ export const Contact = () => {
               {sending ? (
                 <>
                   <span className="contact-btn__spinner" />
-                  Sending…
+                  {t('contact.sendingBtn')}
                 </>
               ) : (
                 <>
-                  Send Message
+                  {t('contact.sendButton')}
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                     <path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>

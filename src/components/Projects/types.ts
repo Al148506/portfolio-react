@@ -5,8 +5,8 @@ export interface GalleryImage {
 
 export interface Project {
   id: string;
-  title: string;
-  description: string;
+  titleKey: string;
+  descriptionKey: string;
   image: string;
   gallery?: GalleryImage[];
   githubUrl: string;

@@ -1,0 +1,144 @@
+{
+  "navbar": {
+    "introduction": "Inicio",
+    "aboutMe": "Sobre Mí",
+    "technologies": "Tecnologías",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "greeting": "Hola, soy <1>Alejandro Castaneda</1>",
+    "title": "Desarrollador Web<1/>Full-Stack",
+    "description": "Especializado en ASP.NET y tecnologías web modernas — construyendo aplicaciones escalables, limpias y de alto rendimiento.",
+    "viewProjects": "Ver Proyectos",
+    "contactMe": "Contáctame",
+    "yearsExp": "Años exp.",
+    "projects": "Proyectos",
+    "technologies": "Tecnologías",
+    "available": "Disponible para trabajar"
+  },
+  "about": {
+    "eyebrow": "Quién soy",
+    "title": "Convirtiendo ideas<1/>en <2>sistemas confiables</2>",
+    "bio": "Soy un <1>desarrollador full-stack</1> con mentalidad backend — enfocado en arquitectura limpia, código mantenible y sistemas que escalan. Me importa <2>cómo</2> se construye el software, no solo que funcione.",
+    "stats": {
+      "fullStack": {
+        "label": "Full-Stack",
+        "sub": "De APIs a UIs pulidas"
+      },
+      "codeQuality": {
+        "label": "Calidad de Código",
+        "sub": "Legible, testeado, mantenible"
+      },
+      "improving": {
+        "label": "Mejora Continua",
+        "sub": "Mejores decisiones en cada iteración"
+      }
+    }
+  },
+  "experience": {
+    "workTitle": "Experiencia Profesional",
+    "freelanceTitle": "Desarrollador Independiente",
+    "educationTitle": "Educación",
+    "workItems": [
+      "Desarrollo y mantenimiento de aplicaciones web internas con ASP.NET MVC y SQL Server.",
+      "Optimización de consultas SQL y consumo de servicios REST para integración de sistemas.",
+      "Pruebas funcionales, documentación técnica y soporte a usuarios.",
+      "Control de versiones con GitHub y gestión de tareas con Trello."
+    ],
+    "freelanceItems": [
+      "Diseñé y desarrollé aplicaciones web full-stack utilizando ASP.NET Core, frameworks de JavaScript y bases de datos SQL.",
+      "Construí APIs REST con autenticación JWT, control de acceso basado en roles y arquitectura backend escalable.",
+      "Implementé interfaces frontend modernas y realicé despliegues en plataformas cloud como Azure y Firebase."
+    ],
+    "educationItems": [
+      "Licenciatura concluida en diciembre de 2021.",
+      "Maestría concluida en junio de 2024, graduado con mención Summa Cum Laude.",
+      "Tesis de maestría: Desarrollo de un videojuego serio accesible para el aprendizaje de matemáticas en estudiantes con discapacidad visual."
+    ],
+    "freelanceSubtitle": "Desarrollador Full-Stack",
+    "educationSubtitle": "Licenciatura y Maestría en Ciencias de la Computación",
+    "workSubtitle": "Becario de TI"
+  },
+  "tech": {
+    "title": "Tecnologías",
+    "subtitle": "Herramientas y lenguajes que utilizo",
+    "summarize": "tecnologías  y contando"
+  },
+  "projectsSection": {
+    "title": "Proyectos Destacados",
+    "subtitle": "Algunos de mis trabajos recientes",
+    "viewProject": "Ver más detalles",
+    "github": "Código Fuente",
+    "label": "Projecto Destacado",
+    "videogameStore": {
+      "title": "VideogameStore",
+      "description": "Aplicación web de comercio electrónico para la venta de videojuegos.",
+      "objective": "Una aplicación web e-commerce full-stack diseñada para gestionar ventas de videojuegos, incluyendo autenticación, acceso basado en roles y gestión completa de productos. El objetivo fue simular una tienda en línea del mundo real con una arquitectura de backend y relaciones de bases de datos estructuradas.",
+      "challenges": "Diseñar relaciones adecuadas de entidades entre usuarios, roles y productos requirió un modelado cuidadoso de la base de datos. Implementar una autenticación segura y asegurar una separación clara entre la lógica de negocio y la capa de presentación fue un desafío clave de arquitectura.",
+      "learning": "Fortalecí mi comprensión de la arquitectura en capas, flujos de autenticación, migraciones mediante Entity Framework y la importancia de la separación de responsabilidades en sistemas escalables."
+    },
+    "inventorySystem": {
+      "title": "Sistema de Inventario",
+      "description": "Sistema de gestión de inventarios construido con ASP.NET.",
+      "objective": "Un sistema de gestión de inventario basado en web creado para manejar el seguimiento de productos, actualizaciones de stock y operaciones CRUD de manera estructurada y mantenible. El proyecto se centró en la fiabilidad del backend y la manipulación limpia de datos.",
+      "challenges": "Garantizar la consistencia de los datos al actualizar cantidades de inventario y manejar la lógica de validación a través de múltiples capas requirió una implementación estratégica. Manejar migraciones de bases de datos mientras se mantenía la integridad de los datos también fue un aspecto clave.",
+      "learning": "Mejoré mi experiencia con Entity Framework, migraciones de base de datos, patrones de validación y la implementación de operaciones CRUD estructuradas con lógica backend clara y legible."
+    },
+    "chatAi": {
+      "title": "Sistema Chat AI",
+      "description": "Sistema de chat potenciado por IA integrado con servicios backend.",
+      "objective": "Una aplicación de chat potenciada por IA que integra servicios de backend para procesar mensajes de usuario y generar respuestas inteligentes. El objetivo fue diseñar una API estructurada capaz de manejar comunicación asíncrona e integración con servicios externos.",
+      "challenges": "Manejar la comunicación asíncrona entre frontend y backend mientras se controlan las respuestas de la API requirió un cuidado manejo de errores y estructuración de la respuesta. La configuración y despliegue del entorno también fueron pasos técnicos importantes.",
+      "learning": "Profundicé mi conocimiento sobre el diseño de APIs RESTful, patrones de programación asíncrona, integración de APIs y procesos de despliegue en entornos Azure."
+    },
+    "cinemaSystem": {
+      "title": "Sistema de Gestión de Cine",
+      "description": "Aplicación de gestión de cine basada en Angular.",
+      "objective": "Una aplicación full-stack de gestión de cine diseñada para visualizar películas, horarios y gestión administrativa. El objetivo fue separar las responsabilidades ente el frontend y backend empleando tecnologías web modernas.",
+      "challenges": "Conectar el frontend en Angular con la API en ASP.NET Core requirió configurar buenas rutas, conexión de datos y estructuración de respuestas de la API. Mantener estados y asegurar una comunicación fluida entre el cliente y el servidor.",
+      "learning": "Obtuve una mayor comprensión en al separación frontend-backend, consumo de API REST, arquitectura de componentes en Angular y diseño estructurado de aplicaciones full-stack."
+    },
+    "modalLabels": {
+      "objective": "Objetivo",
+      "technologies": "Tecnologías",
+      "challenges": "Desafíos",
+      "learning": "Resultados de Aprendizaje",
+      "viewProject": "Ver Demo",
+      "gallery": "Galería del Proyecto"
+    }
+  },
+  "projects": {
+    "eyebrow": "Trabajo Destacado",
+    "title": "<1>Proyectos</1> Recientes",
+    "description": "Proyectos seleccionados que demuestran mi experiencia en backend y full-stack",
+    "viewMore": "Ver Más Proyectos →"
+  },
+  "contact": {
+    "eyebrow": "Mantengámonos en contacto",
+    "title": "Hablemos.",
+    "subtitle": "¿Tienes un proyecto en mente o solo quieres saludar?<1/>Mi bandeja de entrada siempre está abierta.",
+    "nameLabel": "Nombre",
+    "namePlaceholder": "Juan Pérez",
+    "emailLabel": "Correo Electrónico",
+    "emailPlaceholder": "juan@ejemplo.com",
+    "messageLabel": "Mensaje",
+    "messagePlaceholder": "Cuéntame sobre tu proyecto...",
+    "sendingBtn": "Enviando…",
+    "sendButton": "Enviar Mensaje",
+    "successTitle": "¡Mensaje enviado!",
+    "successText": "Te responderé lo antes posible.",
+    "successBtn": "Entendido",
+    "errorTitle": "Ups...",
+    "errorText": "Algo salió mal. Por favor, inténtalo de nuevo más tarde.",
+    "errorBtn": "Reintentar"
+  },
+  "footer": {
+    "thanks": "Gracias por visitar mi portafolio.",
+    "tagline": "Construyamos algo increíble juntos.",
+    "downloadCv": "Descargar CV",
+    "navigate": "Navegar",
+    "connect": "Conectar",
+    "builtWith": "Construido con"
+  }
+}

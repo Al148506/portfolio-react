@@ -9,8 +9,8 @@ import type { Project } from "../components/Projects/types";
 export const projects: Project[] = [
   {
     id: "videogame-store",
-    title: "VideogameStore",
-    description: "E-commerce web application for videogame sales.",
+    titleKey: "projectsSection.videogameStore.title",
+    descriptionKey: "projectsSection.videogameStore.description",
     image: videogamestore,
     gallery: importProjectImages("VideogamePOS"),
     githubUrl: "https://github.com/Al148506/GameStore",
@@ -19,8 +19,8 @@ export const projects: Project[] = [
   },
   {
     id: "inventory-system",
-    title: "Inventory System",
-    description: "Inventory management system built with ASP.NET.",
+    titleKey: "projectsSection.inventorySystem.title",
+    descriptionKey: "projectsSection.inventorySystem.description",
     image: inventorysystem,
     gallery: importProjectImages("InventorySystem"),
     githubUrl: "https://github.com/Al148506/InventorySystem",
@@ -29,8 +29,8 @@ export const projects: Project[] = [
   },
   {
     id: "chat-ai",
-    title: "Chat AI System",
-    description: "AI-powered chat system integrated with backend services.",
+    titleKey: "projectsSection.chatAi.title",
+    descriptionKey: "projectsSection.chatAi.description",
     image: chataisystem,
     gallery: importProjectImages("ChatAISystem"),
     githubUrl: "https://github.com/Al148506/ChatAISystem",
@@ -39,8 +39,8 @@ export const projects: Project[] = [
   },
   {
     id: "cinema-system",
-    title: "Cinema Management System",
-    description: "Angular-based cinema management application.",
+    titleKey: "projectsSection.cinemaSystem.title",
+    descriptionKey: "projectsSection.cinemaSystem.description",
     image: moviessystem,
     gallery: importProjectImages("MoviesSystem"),
     githubUrl: "https://github.com/Al148506/MoviesAngular",

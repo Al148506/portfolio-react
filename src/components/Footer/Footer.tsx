@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import "./Footer.css";
 
 const GithubIcon = () => (
@@ -42,14 +43,15 @@ const EmailIcon = () => (
 );
 
 const navLinks = [
-  { label: "Introduction", href: "#introduction" },
-  { label: "About Me", href: "#about-me" },
-  { label: "Technologies", href: "#technologies" },
-  { label: "Projects", href: "#projects" },
-  { label: "Contact", href: "#contact" },
+  { key: "navbar.introduction", href: "#introduction" },
+  { key: "navbar.aboutMe", href: "#about-me" },
+  { key: "navbar.technologies", href: "#technologies" },
+  { key: "navbar.projects", href: "#projects" },
+  { key: "navbar.contact", href: "#contact" },
 ];
 
 export default function Footer() {
+  const { t } = useTranslation();
   const year = new Date().getFullYear();
 
   return (
@@ -59,9 +61,9 @@ export default function Footer() {
       <div className="footer-inner">
         {/* ── Brand ── */}
         <div className="footer-brand">
-          <p className="footer-name"> Thanks for visiting my portfolio.</p>
+          <p className="footer-name"> {t('footer.thanks')}</p>
           <p className="footer-tagline">
-            Let's build something great together.
+            {t('footer.tagline')}
           </p>
 
           <div className="footer-cta">
@@ -70,18 +72,18 @@ export default function Footer() {
               className="footer-btn footer-btn--primary"
               download
             >
-              Download CV
+              {t('footer.downloadCv')}
             </a>
           </div>
         </div>
 
         {/* ── Nav ── */}
         <div className="footer-col">
-          <span className="footer-section-label">Navigate</span>
+          <span className="footer-section-label">{t('footer.navigate')}</span>
           <nav className="footer-nav">
-            {navLinks.map(({ label, href }) => (
+            {navLinks.map(({ key, href }) => (
               <a key={href} href={href} className="footer-nav-link">
-                {label}
+                {t(key)}
               </a>
             ))}
           </nav>
@@ -89,7 +91,7 @@ export default function Footer() {
 
         {/* ── Social ── */}
         <div className="footer-col">
-          <span className="footer-section-label">Connect</span>
+          <span className="footer-section-label">{t('footer.connect')}</span>
           <div className="footer-social">
             <a
               href="https://github.com/Al148506"
@@ -123,7 +125,7 @@ export default function Footer() {
       {/* ── Bottom bar ── */}
       <div className="footer-bottom">
         <span className="footer-built">
-          Built with
+          {t('footer.builtWith')}
           <span className="footer-built__tech">React</span>
           <span className="footer-built__sep">+</span>
           <span className="footer-built__tech">Vite</span>

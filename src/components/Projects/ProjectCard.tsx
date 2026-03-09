@@ -1,5 +1,6 @@
 import type { Project } from "./types";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { GalleryModal } from "./GalleryModal";
 import "./ProjectCard.css";
 
@@ -10,22 +11,24 @@ interface Props {
 
 export const ProjectCard = ({ project, onMoreDetails }: Props) => {
   const [openGallery, setOpenGallery] = useState(false);
+  const { t } = useTranslation();
+
   return (
     <>
       <div className="showcase-card">
         {/* IMAGE */}
         <div className="showcase-image" onClick={() => setOpenGallery(true)}>
-          <img src={project.image} alt={project.title} />
+          <img src={project.image} alt={t(project.titleKey)} />
           <div className="showcase-image-overlay" />
         </div>
 
         {/* CONTENT */}
         <div className="showcase-content">
-          <span className="showcase-index">Featured Project</span>
+          <span className="showcase-index">{t('projectsSection.label')}</span>
 
-          <h2>{project.title}</h2>
+          <h2>{t(project.titleKey)}</h2>
 
-          <p>{project.description}</p>
+          <p>{t(project.descriptionKey)}</p>
 
           <div className="showcase-divider" />
 
@@ -37,7 +40,7 @@ export const ProjectCard = ({ project, onMoreDetails }: Props) => {
               className="btn btn-outline-light"
             >
               <i className="bi bi-github me-2"></i>
-              View Code
+              {t('projectsSection.github')}
             </a>
 
             <a
@@ -47,17 +50,17 @@ export const ProjectCard = ({ project, onMoreDetails }: Props) => {
               className="btn btn-primary"
             >
               <i className="bi bi-box-arrow-up-right me-2"></i>
-              Live Demo
+              {t('projectsSection.modalLabels.viewProject')}
             </a>
           </section>
 
           <div className="showcase-buttons">
-            <button onClick={onMoreDetails}>More Details →</button>
+            <button onClick={onMoreDetails}>{t('projectsSection.viewProject')} →</button>
           </div>
         </div>
       </div>
       {openGallery && project.gallery && (
-        <GalleryModal projectTitle={project.title}
+        <GalleryModal projectTitle={t(project.titleKey)}
           images={project.gallery}
           onClose={() => setOpenGallery(false)}
         />

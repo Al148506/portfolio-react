@@ -4,22 +4,20 @@ import chataisystem from "../images/ConversationLuke.png";
 import moviessystem from "../images/Movies.png";
 export interface ProjectModalData {
   id: string;
-  title: string;
+  titleKey: string;
   image: string;
-  objective: string;
+  objectiveKey: string;
   technologies: string[];
-  challenges: string;
-  learning: string;
+  challengesKey: string;
+  learningKey: string;
 }
 
 export const projectsModalData: ProjectModalData[] = [
   {
     id: "videogame-store",
-    title: "VideogameStore",
+    titleKey: "projectsSection.videogameStore.title",
     image: videogamestore,
-    objective:
-      "A full-stack e-commerce web application designed to manage videogame sales, including authentication, role-based access, and complete product management. The goal was to simulate a real-world online store with structured backend architecture and database relationships.",
-
+    objectiveKey: "projectsSection.videogameStore.objective",
     technologies: [
       "ASP.NET Core",
       "Entity Framework Core",
@@ -28,20 +26,15 @@ export const projectsModalData: ProjectModalData[] = [
       "Authentication & Authorization",
     ],
 
-    challenges:
-      "Designing proper entity relationships between users, roles, and products required careful database modeling. Implementing secure authentication and ensuring clean separation between business logic and presentation layer was a key architectural challenge.",
-
-    learning:
-      "Strengthened my understanding of layered architecture, authentication flows, Entity Framework migrations, and the importance of separation of concerns in scalable systems.",
+    challengesKey: "projectsSection.videogameStore.challenges",
+    learningKey: "projectsSection.videogameStore.learning",
   },
 
   {
     id: "inventory-system",
-    title: "Inventory System",
+    titleKey: "projectsSection.inventorySystem.title",
     image: inventorysystem,
-    objective:
-      "A web-based inventory management system built to handle product tracking, stock updates, and CRUD operations in a structured and maintainable way. The project focused on backend reliability and clean data handling.",
-
+    objectiveKey: "projectsSection.inventorySystem.objective",
     technologies: [
       "ASP.NET Core",
       "Entity Framework Core",
@@ -50,20 +43,15 @@ export const projectsModalData: ProjectModalData[] = [
       "Bootstrap",
     ],
 
-    challenges:
-      "Ensuring data consistency when updating stock quantities and handling validation logic across multiple layers required thoughtful implementation. Managing database migrations while maintaining data integrity was also a key aspect.",
-
-    learning:
-      "Improved my experience working with Entity Framework, database migrations, validation patterns, and implementing structured CRUD operations with clean and readable backend logic.",
+    challengesKey: "projectsSection.inventorySystem.challenges",
+    learningKey: "projectsSection.inventorySystem.learning",
   },
 
   {
     id: "chat-ai",
-    title: "Chat AI System",
+    titleKey: "projectsSection.chatAi.title",
     image: chataisystem,
-    objective:
-      "An AI-powered chat application that integrates backend services to process user messages and generate intelligent responses. The objective was to design a structured API capable of handling asynchronous communication and external service integration.",
-
+    objectiveKey: "projectsSection.chatAi.objective",
     technologies: [
       "ASP.NET Core Web API",
       "Entity Framework Core",
@@ -71,20 +59,15 @@ export const projectsModalData: ProjectModalData[] = [
       "Azure Deployment",
     ],
 
-    challenges:
-      "Handling asynchronous communication between frontend and backend while managing API responses required careful error handling and response structuring. Deployment configuration and environment setup were also important technical steps.",
-
-    learning:
-      "Deepened my understanding of RESTful API design, asynchronous programming patterns, API integration, and deployment processes in Azure environments.",
+    challengesKey: "projectsSection.chatAi.challenges",
+    learningKey: "projectsSection.chatAi.learning",
   },
 
   {
     id: "cinema-system",
-    title: "Cinema Management System",
+    titleKey: "projectsSection.cinemaSystem.title",
     image: moviessystem,
-    objective:
-      "A full-stack cinema management application designed to handle movie listings, showtimes, and administrative management. The goal was to separate frontend and backend responsibilities using modern web technologies.",
-
+    objectiveKey: "projectsSection.cinemaSystem.objective",
     technologies: [
       "Angular",
       "ASP.NET Core Web API",
@@ -92,10 +75,7 @@ export const projectsModalData: ProjectModalData[] = [
       "SQL Server",
     ],
 
-    challenges:
-      "Connecting the Angular frontend with the ASP.NET Core API required proper routing, data binding, and structured API responses. Managing state and ensuring smooth communication between client and server was a key challenge.",
-
-    learning:
-      "Gained stronger understanding of frontend-backend separation, REST API consumption, Angular component architecture, and structured full-stack application design.",
+    challengesKey: "projectsSection.cinemaSystem.challenges",
+    learningKey: "projectsSection.cinemaSystem.learning",
   },
 ];

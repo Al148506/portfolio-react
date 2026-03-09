@@ -1,17 +1,22 @@
+import { useTranslation, Trans } from "react-i18next";
 import { ProjectCarousel } from "./ProjectCarousel";
 import "./ProjectsSection.css";
 
 export const Projects = () => {
+  const { t } = useTranslation();
+
   return (
     <section id="projects" className="projects-section">
       {/* Header dentro del container */}
       <div className="container">
-        <span className="section-eyebrow">Selected Work</span>
+        <span className="section-eyebrow">{t('projects.eyebrow')}</span>
         <h2 className="section-title">
-          Recent <span>Projects</span>
+          <Trans i18nKey="projects.title" components={{ 1: <span /> }}>
+            Recent <span>Projects</span>
+          </Trans>
         </h2>
         <p className="section-description">
-          Selected projects that showcase my backend and full-stack experience
+          {t('projects.description')}
         </p>
       </div>
 
@@ -26,7 +31,7 @@ export const Projects = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            View More Projects →
+            {t('projects.viewMore')}
           </a>
         </div>
       </div>

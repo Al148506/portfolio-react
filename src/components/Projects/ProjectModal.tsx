@@ -1,4 +1,5 @@
 import type { ProjectModalData } from "../../data/projects.modal.data"
+import { useTranslation } from "react-i18next"
 import "./ProjectModal.css"
 
 interface Props {
@@ -7,6 +8,8 @@ interface Props {
 }
 
 const ProjectModal = ({ project, onClose }: Props) => {
+  const { t } = useTranslation()
+
   if (!project) return null
 
   return (
@@ -19,9 +22,9 @@ const ProjectModal = ({ project, onClose }: Props) => {
 
         {/* Imagen */}
         <div className="modal-image-wrapper">
-          <img src={project.image} alt={project.title} />
+          <img src={project.image} alt={t(project.titleKey)} />
           <div className="modal-image-overlay">
-            <h3>{project.title}</h3>
+            <h3>{t(project.titleKey)}</h3>
           </div>
         </div>
 
@@ -29,12 +32,12 @@ const ProjectModal = ({ project, onClose }: Props) => {
         <div className="modal-content-body">
 
           <section>
-            <h6><i className="bi bi-bullseye me-2"></i>Objective</h6>
-            <p>{project.objective}</p>
+            <h6><i className="bi bi-bullseye me-2"></i>{t('projectsSection.modalLabels.objective')}</h6>
+            <p>{t(project.objectiveKey)}</p>
           </section>
 
           <section>
-            <h6><i className="bi bi-tools me-2"></i>Technologies</h6>
+            <h6><i className="bi bi-tools me-2"></i>{t('projectsSection.modalLabels.technologies')}</h6>
             <div className="tech-badges">
               {project.technologies.map((tech: string, index: number) => (
                 <span key={index} className="badge bg-primary">
@@ -45,13 +48,13 @@ const ProjectModal = ({ project, onClose }: Props) => {
           </section>
 
           <section>
-            <h6><i className="bi bi-exclamation-triangle me-2"></i>Challenges</h6>
-            <p>{project.challenges}</p>
+            <h6><i className="bi bi-exclamation-triangle me-2"></i>{t('projectsSection.modalLabels.challenges')}</h6>
+            <p>{t(project.challengesKey)}</p>
           </section>
 
           <section>
-            <h6><i className="bi bi-graph-up me-2"></i>What I Learned</h6>
-            <p>{project.learning}</p>
+            <h6><i className="bi bi-graph-up me-2"></i>{t('projectsSection.modalLabels.learning')}</h6>
+            <p>{t(project.learningKey)}</p>
           </section>
 
         </div>
