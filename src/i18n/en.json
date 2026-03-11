@@ -99,6 +99,13 @@
       "challenges": "Connecting the Angular frontend with the ASP.NET Core API required proper routing, data binding, and structured API responses. Managing state and ensuring smooth communication between client and server was a key challenge.",
       "learning": "Gained stronger understanding of frontend-backend separation, REST API consumption, Angular component architecture, and structured full-stack application design."
     },
+    "inredtelecom": {
+      "title": "Inredtelecom Landing Page",
+      "description": "Corporate landing page developed with React, Vite, and TypeScript.",
+      "objective": "Design and develop a modern landing page for a telecommunications company to showcase its services, previous work, and customer testimonials, while providing clear contact channels for potential clients.",
+      "challenges": "Structuring a scalable component-based architecture in React while keeping the interface clean and responsive. Another challenge was organizing content sections such as services, gallery, testimonials, and contact in a way that improves usability and user engagement.",
+      "learning": "Improved skills in building responsive React interfaces, structuring reusable components, optimizing a Vite-based project, and designing landing pages focused on clear communication and conversion."
+    },
     "modalLabels": {
       "objective": "Objective",
       "technologies": "Technologies",

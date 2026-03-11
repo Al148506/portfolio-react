@@ -2,6 +2,8 @@ import videogamestore from "../images/videogameStore.png";
 import inventorysystem from "../images/InventoryPage.png";
 import chataisystem from "../images/ConversationLuke.png";
 import moviessystem from "../images/Movies.png";
+import inredtelecom from "../images/Inredtelecom/01HomePage.png"
+
 export interface ProjectModalData {
   id: string;
   titleKey: string;
@@ -78,4 +80,19 @@ export const projectsModalData: ProjectModalData[] = [
     challengesKey: "projectsSection.cinemaSystem.challenges",
     learningKey: "projectsSection.cinemaSystem.learning",
   },
+    {
+    id: "inredtelecom",
+    titleKey: "projectsSection.inredtelecom.title",
+    image: inredtelecom,
+    objectiveKey: "projectsSection.inredtelecom.objective",
+    technologies: [
+      "React",
+      "Vite",
+      "CSS",
+      "Vercel",
+    ],
+
+    challengesKey: "projectsSection.inredtelecom.challenges",
+    learningKey: "projectsSection.inredtelecom.learning",
+  }
 ];

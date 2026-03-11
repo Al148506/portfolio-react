@@ -2,9 +2,9 @@ import videogamestore from "../images/videogameStore.png";
 import inventorysystem from "../images/InventoryPage.png";
 import chataisystem from "../images/ConversationLuke.png";
 import moviessystem from "../images/Movies.png";
+import inredtelecom from "../images/Inredtelecom/01HomePage.png";
 import { importProjectImages } from "../helper/importProjectImages";
 import type { Project } from "../components/Projects/types";
-
 
 export const projects: Project[] = [
   {
@@ -46,5 +46,15 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/Al148506/MoviesAngular",
     liveUrl: "https://moviesangularacg.web.app/",
     technologies: ["ASP.NET Core", "Entity Framework"],
+  },
+  {
+    id: "inredtelecom",
+    titleKey: "projectsSection.inredtelecom.title",
+    descriptionKey: "projectsSection.inredtelecom.description",
+    image: inredtelecom,
+    gallery: importProjectImages("Inredtelecom"),
+    githubUrl: "https://github.com/Al148506/Inredtelecom",
+    liveUrl: "https://inredtelecom.vercel.app/",
+    technologies: ["React", "Typescript", "Vite", "Vercel"],
   },
 ];
